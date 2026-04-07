@@ -1,160 +1,44 @@
 ---
-// src/components/Header.astro
 ---
 
-<header class="header glass glass-nav">
-  <div class="container nav-container">
-    <a href="/" class="logo">
-      <span class="text-accent" style="font-size: 2rem;">Flores</span>
-      <span style="font-family: var(--font-main); font-weight: 800; font-size: 1.5rem; letter-spacing: -0.5px;">Eternas</span>
+<header id="main-header" class="fixed top-0 left-0 w-full z-50 py-4 transition-all duration-300 glass glass-nav">
+  <div class="container max-w-300 mx-auto px-6 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-1">
+      <span class="font-accent text-accent text-3xl md:text-4xl">Flores</span>
+      <span class="font-main font-extrabold text-xl md:text-2xl tracking-tight">Eternas</span>
     </a>
 
-    <nav class="nav-links">
-      <a href="/">Inicio</a>
-      <a href="/nosotros">Nosotros</a>
-      <a href="/catalogo">Catálogo</a>
-      <a href="/personalizacion">Personalizar</a>
-      <a href="/galeria">Galería</a>
-      <a href="/contacto">Contacto</a>
+    <nav class="hidden md:flex gap-8">
+      <a href="/" class="font-main font-medium text-text-main transition-colors duration-300 relative group hover:text-primary-dark after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 group-hover:after:w-full after:h-0.5 after:bg-primary after:transition-all after:duration-300">Inicio</a>
+      <a href="/nosotros" class="font-main font-medium text-text-main transition-colors duration-300 relative group hover:text-primary-dark after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 group-hover:after:w-full after:h-0.5 after:bg-primary after:transition-all after:duration-300">Nosotros</a>
+      <a href="/catalogo" class="font-main font-medium text-text-main transition-colors duration-300 relative group hover:text-primary-dark after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 group-hover:after:w-full after:h-0.5 after:bg-primary after:transition-all after:duration-300">Catálogo</a>
+      <a href="/personalizacion" class="font-main font-medium text-text-main transition-colors duration-300 relative group hover:text-primary-dark after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 group-hover:after:w-full after:h-0.5 after:bg-primary after:transition-all after:duration-300">Personalizar</a>
+      <a href="/galeria" class="font-main font-medium text-text-main transition-colors duration-300 relative group hover:text-primary-dark after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 group-hover:after:w-full after:h-0.5 after:bg-primary after:transition-all after:duration-300">Galería</a>
+      <a href="/contacto" class="font-main font-medium text-text-main transition-colors duration-300 relative group hover:text-primary-dark after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 group-hover:after:w-full after:h-0.5 after:bg-primary after:transition-all after:duration-300">Contacto</a>
     </nav>
 
-    <div class="nav-actions">
-      <button class="cart-trigger btn-icon" aria-label="Abrir carrito">
+    <div class="flex items-center gap-4">
+      <button class="bg-transparent border-none cursor-pointer relative text-text-main flex items-center justify-center transition-all duration-300 hover:text-primary-dark hover:scale-110" aria-label="Abrir carrito">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-        <span class="cart-count">0</span>
+        <span class="absolute -top-2 -right-2 bg-accent text-white text-[10px] font-bold w-4.5 h-4.5 rounded-full flex items-center justify-center">0</span>
       </button>
       
-      <button class="mobile-menu-btn" aria-label="Abrir menú">
+      <button class="bg-transparent border-none cursor-pointer flex text-text-main md:hidden" aria-label="Abrir menú">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
       </button>
     </div>
   </div>
 </header>
 
-<style>
-  .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 100;
-    padding: 1rem 0;
-    transition: var(--transition);
-  }
-
-  .nav-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-  }
-
-  .nav-links {
-    display: none;
-    gap: 2rem;
-  }
-
-  .nav-links a {
-    font-family: var(--font-main);
-    font-weight: 500;
-    color: var(--c-text-main);
-    transition: var(--transition);
-    position: relative;
-  }
-
-  .nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0%;
-    height: 2px;
-    background-color: var(--c-primary);
-    transition: var(--transition);
-  }
-
-  .nav-links a:hover::after {
-    width: 100%;
-  }
-
-  .nav-links a:hover {
-    color: var(--c-primary-dark);
-  }
-
-  .nav-actions {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .btn-icon {
-    background: none;
-    border: none;
-    cursor: pointer;
-    position: relative;
-    color: var(--c-text-main);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: var(--transition);
-  }
-
-  .btn-icon:hover {
-    color: var(--c-primary-dark);
-    transform: scale(1.1);
-  }
-
-  .cart-count {
-    position: absolute;
-    top: -8px;
-    right: -8px;
-    background-color: var(--c-accent);
-    color: white;
-    font-size: 0.75rem;
-    font-weight: bold;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .mobile-menu-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    color: var(--c-text-main);
-  }
-
-  @media (min-width: 768px) {
-    .nav-links {
-      display: flex;
-    }
-    .mobile-menu-btn {
-      display: none;
-    }
-  }
-
-  /* When scrolled */
-  :global(body.scrolled) .header {
-    padding: 0.5rem 0;
-    box-shadow: var(--shadow-md);
-  }
-</style>
-
 <script>
+  const header = document.getElementById('main-header');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
-      document.body.classList.add('scrolled');
+      header?.classList.add('py-2', 'shadow-md');
+      header?.classList.remove('py-4');
     } else {
-      document.body.classList.remove('scrolled');
+      header?.classList.remove('py-2', 'shadow-md');
+      header?.classList.add('py-4');
     }
   });
 </script>

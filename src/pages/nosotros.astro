@@ -3,148 +3,54 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Sobre Nosotros">
-  <div class="page-header">
-    <div class="container text-center">
-      <h1 class="title" style="color: white; margin-bottom: 0;">Sobre Nosotros</h1>
+  <div class="bg-linear-to-br from-primary-dark to-primary pt-24 pb-12 px-6 relative rounded-b-[50%_10%]">
+    <div class="container max-w-300 mx-auto text-center">
+      <h1 class="text-[2.5rem] md:text-[3.5rem] text-white font-main font-semibold leading-tight m-0">Sobre Nosotros</h1>
     </div>
   </div>
 
-  <section class="section">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-text animate-fade-in">
-          <h2 class="title" style="font-size: 2rem;">Nuestra Historia</h2>
-          <p>Somos una empresa creada en Cancún, nacida como un emprendimiento en pareja con el objetivo de transformar ideas en detalles únicos y duraderos.</p>
-          <p>Nos especializamos en la creación de flores de limpiapipas, hechas completamente a mano, cuidando cada detalle para ofrecer productos originales que transmiten emociones y creatividad. Cada pieza que elaboramos refleja dedicación, amor y el deseo de crear algo especial para cada cliente.</p>
+  <section class="py-16 px-6">
+    <div class="container max-w-300 mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mt-8">
+        <div class="animate-fade-in">
+          <h2 class="text-3xl text-text-main font-main font-semibold mb-4">Nuestra Historia</h2>
+          <p class="mb-6 text-lg text-text-muted">Somos una empresa creada en Cancún, nacida como un emprendimiento en pareja con el objetivo de transformar ideas en detalles únicos y duraderos.</p>
+          <p class="mb-6 text-lg text-text-muted">Nos especializamos en la creación de flores de limpiapipas, hechas completamente a mano, cuidando cada detalle para ofrecer productos originales que transmiten emociones y creatividad. Cada pieza que elaboramos refleja dedicación, amor y el deseo de crear algo especial para cada cliente.</p>
         </div>
-        <div class="about-img placeholder-history glass animate-fade-in" style="animation-delay: 0.2s;">
+        <div class="bg-linear-to-br from-secondary to-primary-light h-100 rounded-3xl glass animate-fade-in" style="animation-delay: 0.2s;">
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section bg-secondary-light">
-    <div class="container">
-      <div class="mision-vision">
-        <div class="card glass animate-fade-in">
-          <div class="icon">🌷</div>
-          <h3>Nuestra Misión</h3>
-          <p>Crear flores artesanales únicas que permitan a las personas expresar sentimientos de una manera creativa, duradera y significativa.</p>
+  <section class="py-16 px-6 bg-secondary/30">
+    <div class="container max-w-300 mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="p-8 md:p-12 text-center rounded-2xl glass animate-fade-in">
+          <div class="text-5xl mb-4">🌷</div>
+          <h3 class="mb-4 text-2xl font-main font-semibold text-primary-dark">Nuestra Misión</h3>
+          <p class="text-text-muted">Crear flores artesanales únicas que permitan a las personas expresar sentimientos de una manera creativa, duradera y significativa.</p>
         </div>
         
-        <div class="card glass animate-fade-in" style="animation-delay: 0.2s;">
-          <div class="icon">🌼</div>
-          <h3>Nuestra Visión</h3>
-          <p>Convertirnos en una marca reconocida en Quintana Roo por la calidad, innovación y originalidad de nuestros productos artesanales.</p>
+        <div class="p-8 md:p-12 text-center rounded-2xl glass animate-fade-in" style="animation-delay: 0.2s;">
+          <div class="text-5xl mb-4">🌼</div>
+          <h3 class="mb-4 text-2xl font-main font-semibold text-primary-dark">Nuestra Visión</h3>
+          <p class="text-text-muted">Convertirnos en una marca reconocida en Quintana Roo por la calidad, innovación y originalidad de nuestros productos artesanales.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container text-center">
-      <h2 class="title" style="font-size: 2rem;">Nuestros Valores 💖</h2>
-      <div class="valores-list animate-fade-in">
-        <span class="bubble">Creatividad</span>
-        <span class="bubble">Compromiso</span>
-        <span class="bubble">Calidad</span>
-        <span class="bubble">Atención personalizada</span>
-        <span class="bubble">Amor por lo artesanal</span>
+  <section class="py-16 px-6">
+    <div class="container max-w-300 mx-auto text-center">
+      <h2 class="text-3xl text-text-main font-main font-semibold mb-4">Nuestros Valores 💖</h2>
+      <div class="flex flex-wrap justify-center gap-4 mt-8 animate-fade-in">
+        <span class="bg-white text-primary-dark py-3 px-6 rounded-full font-medium shadow-sm transition-all duration-300 border-2 border-primary-light hover:-translate-y-1 hover:scale-105 hover:shadow-md hover:bg-primary hover:text-white hover:border-primary">Creatividad</span>
+        <span class="bg-white text-primary-dark py-3 px-6 rounded-full font-medium shadow-sm transition-all duration-300 border-2 border-primary-light hover:-translate-y-1 hover:scale-105 hover:shadow-md hover:bg-primary hover:text-white hover:border-primary">Compromiso</span>
+        <span class="bg-white text-primary-dark py-3 px-6 rounded-full font-medium shadow-sm transition-all duration-300 border-2 border-primary-light hover:-translate-y-1 hover:scale-105 hover:shadow-md hover:bg-primary hover:text-white hover:border-primary">Calidad</span>
+        <span class="bg-white text-primary-dark py-3 px-6 rounded-full font-medium shadow-sm transition-all duration-300 border-2 border-primary-light hover:-translate-y-1 hover:scale-105 hover:shadow-md hover:bg-primary hover:text-white hover:border-primary">Atención personalizada</span>
+        <span class="bg-white text-primary-dark py-3 px-6 rounded-full font-medium shadow-sm transition-all duration-300 border-2 border-primary-light hover:-translate-y-1 hover:scale-105 hover:shadow-md hover:bg-primary hover:text-white hover:border-primary">Amor por lo artesanal</span>
       </div>
     </div>
   </section>
 </Layout>
-
-<style>
-  .page-header {
-    background: linear-gradient(135deg, var(--c-primary-dark), var(--c-primary));
-    padding: 6rem 1.5rem 3rem;
-    position: relative;
-    border-bottom-left-radius: 50% 10%;
-    border-bottom-right-radius: 50% 10%;
-  }
-
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 3rem;
-    align-items: center;
-    margin-top: 2rem;
-  }
-
-  @media (min-width: 768px) {
-    .about-grid {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-
-  .about-text p {
-    margin-bottom: 1.5rem;
-    font-size: 1.1rem;
-    color: var(--c-text-muted);
-  }
-
-  .placeholder-history {
-    background: linear-gradient(135deg, var(--c-secondary), var(--c-primary-light));
-    height: 400px;
-    border-radius: var(--radius-lg);
-  }
-
-  .bg-secondary-light {
-    background-color: rgba(226, 240, 203, 0.3);
-  }
-
-  .mision-vision {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  @media (min-width: 768px) {
-    .mision-vision {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-
-  .card {
-    padding: 3rem 2rem;
-    text-align: center;
-    border-radius: var(--radius-md);
-  }
-
-  .card .icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-  }
-
-  .card h3 {
-    margin-bottom: 1rem;
-    color: var(--c-primary-dark);
-  }
-
-  .valores-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 2rem;
-  }
-
-  .bubble {
-    background-color: var(--c-white);
-    color: var(--c-primary-dark);
-    padding: 1rem 2rem;
-    border-radius: 50px;
-    font-weight: 500;
-    box-shadow: var(--shadow-sm);
-    transition: var(--transition);
-    border: 2px solid var(--c-primary-light);
-  }
-
-  .bubble:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: var(--shadow-md);
-    background-color: var(--c-primary);
-    color: var(--c-white);
-  }
-</style>

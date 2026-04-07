@@ -3,159 +3,65 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Personalización">
-  <div class="page-header text-center">
-    <div class="container">
-      <h1 class="title" style="color: white; margin-bottom: 0;">Hazlo Tuyo</h1>
-      <p class="subtitle" style="color: rgba(255,255,255,0.9); margin-top: 1rem;">Creamos arreglos personalizados según tu idea</p>
+  <div class="linear-to-br from-primary-dark to-[#FFC0CB] pt-24 pb-12 px-6 relative rounded-b-[20%] text-center">
+    <div class="container max-w-300 mx-auto">
+      <h1 class="text-[2.5rem] md:text-[3.5rem] text-white font-main font-semibold leading-tight m-0">Hazlo Tuyo</h1>
+      <p class="text-xl text-white/90 mt-4">Creamos arreglos personalizados según tu idea</p>
     </div>
   </div>
 
-  <section class="section">
-    <div class="container custom-grid">
-      <div class="custom-info animate-fade-in">
-        <h2 class="title" style="font-size: 2.2rem;">Opciones Ilimitadas</h2>
-        <p style="margin-bottom: 2rem; color: var(--c-text-muted);">Cuéntanos qué tienes en mente y nosotros lo transformamos en una realidad eterna con limpiapipas. ¡Cualquier diseño es posible!</p>
+  <section class="py-16 px-6">
+    <div class="container max-w-300 mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center mt-8">
+      <div class="animate-fade-in">
+        <h2 class="text-[2.2rem] text-text-main font-main font-semibold mb-4">Opciones Ilimitadas</h2>
+        <p class="mb-8 text-text-muted">Cuéntanos qué tienes en mente y nosotros lo transformamos en una realidad eterna con limpiapipas. ¡Cualquier diseño es posible!</p>
         
-        <ul class="options-list">
-          <li>
-            <span class="icon">🎨</span>
+        <ul class="list-none p-0">
+          <li class="flex gap-4 mb-6">
+            <span class="text-[2rem] bg-primary-light w-15 h-15 flex items-center justify-center rounded-full shrink-0">🎨</span>
             <div>
-              <strong>Colores a tu elección</strong>
-              <p>Puedes mezclar y combinar los colores de tus flores favoritas.</p>
+              <strong class="text-[1.1rem] text-primary-dark block mb-[0.3rem]">Colores a tu elección</strong>
+              <p class="text-text-muted text-[0.95rem]">Puedes mezclar y combinar los colores de tus flores favoritas.</p>
             </div>
           </li>
-          <li>
-            <span class="icon">📏</span>
+          <li class="flex gap-4 mb-6">
+            <span class="text-[2rem] bg-primary-light w-15 h-15 flex items-center justify-center rounded-full shrink-0">📏</span>
             <div>
-              <strong>Tamaños variados</strong>
-              <p>Desde un detalle individual hasta un ramo extragrande espectacular.</p>
+              <strong class="text-[1.1rem] text-primary-dark block mb-[0.3rem]">Tamaños variados</strong>
+              <p class="text-text-muted text-[0.95rem]">Desde un detalle individual hasta un ramo extragrande espectacular.</p>
             </div>
           </li>
-          <li>
-            <span class="icon">💌</span>
+          <li class="flex gap-4 mb-6">
+            <span class="text-[2rem] bg-primary-light w-15 h-15 flex items-center justify-center rounded-full shrink-0">💌</span>
             <div>
-              <strong>Mensajes y dedicatorias</strong>
-              <p>Añade un topper o una tarjeta con tu mensaje especial.</p>
+              <strong class="text-[1.1rem] text-primary-dark block mb-[0.3rem]">Mensajes y dedicatorias</strong>
+              <p class="text-text-muted text-[0.95rem]">Añade un topper o una tarjeta con tu mensaje especial.</p>
             </div>
           </li>
         </ul>
       </div>
 
-      <div class="custom-form glass animate-fade-in" style="animation-delay: 0.2s;">
-        <h3 style="margin-bottom: 1.5rem; color: var(--c-primary-dark); font-size: 1.5rem;">Solicitar cotización</h3>
+      <div class="p-10 rounded-3xl glass animate-fade-in" style="animation-delay: 0.2s;">
+        <h3 class="mb-6 text-primary-dark text-2xl font-main font-semibold">Solicitar cotización</h3>
         <form>
-          <div class="form-group">
-            <label for="nombre">Nombre Completo</label>
-            <input type="text" id="nombre" placeholder="Ej. Ana Pérez" required />
+          <div class="mb-6">
+            <label for="nombre" class="block mb-2 font-medium text-text-main">Nombre Completo</label>
+            <input type="text" id="nombre" placeholder="Ej. Ana Pérez" class="w-full py-3 px-4 border border-black/10 rounded-lg font-inherit text-base transition-all duration-300 bg-white/80 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/30" required />
           </div>
           
-          <div class="form-group">
-            <label for="pedido">Idea de Pedido</label>
-            <input type="text" id="pedido" placeholder="Ej. Ramo de 5 tulipanes con corona" required />
+          <div class="mb-6">
+            <label for="pedido" class="block mb-2 font-medium text-text-main">Idea de Pedido</label>
+            <input type="text" id="pedido" placeholder="Ej. Ramo de 5 tulipanes con corona" class="w-full py-3 px-4 border border-black/10 rounded-lg font-inherit text-base transition-all duration-300 bg-white/80 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/30" required />
           </div>
           
-          <div class="form-group">
-            <label for="detalles">Detalles de Personalización</label>
-            <textarea id="detalles" rows="4" placeholder="Especifica colores, tamaño o si quieres agregar algún accesorio extra..." required></textarea>
+          <div class="mb-6">
+            <label for="detalles" class="block mb-2 font-medium text-text-main">Detalles de Personalización</label>
+            <textarea id="detalles" rows="4" placeholder="Especifica colores, tamaño o si quieres agregar algún accesorio extra..." class="w-full py-3 px-4 border border-black/10 rounded-lg font-inherit text-base transition-all duration-300 bg-white/80 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/30" required></textarea>
           </div>
           
-          <button type="submit" class="btn btn-primary" style="width: 100%;">Solicitar cotización</button>
+          <button type="submit" class="btn btn-primary w-full">Solicitar cotización</button>
         </form>
       </div>
     </div>
   </section>
 </Layout>
-
-<style>
-  .page-header {
-    background: linear-gradient(135deg, var(--c-primary-dark), #FFC0CB);
-    padding: 6rem 1.5rem 3rem;
-    position: relative;
-    border-bottom-left-radius: 20%;
-    border-bottom-right-radius: 20%;
-  }
-
-  .custom-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 4rem;
-    align-items: center;
-    margin-top: 2rem;
-  }
-
-  @media (min-width: 768px) {
-    .custom-grid {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-
-  .options-list {
-    list-style: none;
-    padding: 0;
-  }
-
-  .options-list li {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .options-list .icon {
-    font-size: 2rem;
-    background: var(--c-primary-light);
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
-
-  .options-list strong {
-    font-size: 1.1rem;
-    color: var(--c-primary-dark);
-    display: block;
-    margin-bottom: 0.3rem;
-  }
-
-  .options-list p {
-    color: var(--c-text-muted);
-    font-size: 0.95rem;
-  }
-
-  .custom-form {
-    padding: 2.5rem;
-    border-radius: var(--radius-lg);
-  }
-
-  .form-group {
-    margin-bottom: 1.5rem;
-  }
-
-  .form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-    color: var(--c-text-main);
-  }
-
-  .form-group input,
-  .form-group textarea {
-    width: 100%;
-    padding: 0.8rem 1rem;
-    border: 1px solid rgba(0,0,0,0.1);
-    border-radius: var(--radius-sm);
-    font-family: inherit;
-    font-size: 1rem;
-    transition: var(--transition);
-    background-color: rgba(255, 255, 255, 0.8);
-  }
-
-  .form-group input:focus,
-  .form-group textarea:focus {
-    outline: none;
-    border-color: var(--c-primary);
-    box-shadow: 0 0 0 3px rgba(255, 183, 178, 0.3);
-  }
-</style>
