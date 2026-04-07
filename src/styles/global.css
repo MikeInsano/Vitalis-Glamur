@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;700&display=swap');
+
+:root {
+  /* Colors */
+  --c-primary: #FFB7B2; /* Pastel Pink */
+  --c-primary-dark: #FF9E99;
+  --c-primary-light: #FFDADE;
+  --c-secondary: #E2F0CB; /* Soft Green */
+  --c-secondary-dark: #C6D8A4;
+  --c-text-main: #333333;
+  --c-text-muted: #666666;
+  --c-bg: #FAFAFA;
+  --c-white: #FFFFFF;
+  --c-accent: #FF8FAB; /* A deeper pink for contrast */
+
+  /* Typography */
+  --font-main: 'Outfit', sans-serif;
+  --font-text: 'Inter', sans-serif;
+  --font-accent: 'Dancing Script', cursive;
+
+  /* Layout & Spaces */
+  --max-width: 1200px;
+  --padding-section: 4rem 1.5rem;
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  
+  /* Shadows & Glass */
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 32px rgba(255, 143, 171, 0.15);
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.5);
+  
+  /* Animations */
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-text);
+  color: var(--c-text-main);
+  background-color: var(--c-bg);
+  line-height: 1.6;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-main);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Typography Utilities */
+.text-accent {
+  font-family: var(--font-accent);
+  color: var(--c-accent);
+  font-size: 1.2em;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--c-text-main);
+}
+@media (min-width: 768px) {
+  .title { font-size: 3.5rem; }
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--c-text-muted);
+  font-weight: 400;
+}
+
+/* Layout Utilities */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section {
+  padding: var(--padding-section);
+}
+
+/* Button Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.8rem;
+  border-radius: 50px;
+  font-family: var(--font-main);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+  border: none;
+  gap: 0.5rem;
+}
+
+.btn-primary {
+  background-color: var(--c-primary);
+  color: var(--c-text-main);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary:hover {
+  background-color: var(--c-primary-dark);
+  color: var(--c-white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--c-primary-dark);
+  border: 2px solid var(--c-primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--c-primary);
+  color: var(--c-white);
+  transform: translateY(-2px);
+}
+
+/* Glassmorphism Classes */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: var(--glass-border);
+  box-shadow: var(--shadow-md);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Specific floating WP Button UI */
+.floating-wp {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 60px;
+  height: 60px;
+  background-color: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+  box-shadow: var(--shadow-md);
+  z-index: 1000;
+  transition: var(--transition);
+}
+.floating-wp:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+}

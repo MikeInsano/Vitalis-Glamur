@@ -1,0 +1,152 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Galería">
+  <div class="page-header text-center">
+    <div class="container">
+      <h1 class="title" style="color: white; margin-bottom: 0;">Nuestra Galería</h1>
+      <p class="subtitle" style="color: rgba(255,255,255,0.9); margin-top: 1rem;">Un vistazo al amor en cada detalle</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      
+      <div class="gallery-filters animate-fade-in">
+        <button class="filter-btn active">Todos</button>
+        <button class="filter-btn">Productos Terminados</button>
+        <button class="filter-btn">En Proceso</button>
+        <button class="filter-btn">Entregas</button>
+      </div>
+
+      <div class="masonry-grid animate-fade-in" style="animation-delay: 0.2s;">
+        <div class="gallery-item item-large placeholder-1">
+          <div class="overlay"><span>Ramo Terminado</span></div>
+        </div>
+        <div class="gallery-item placeholder-2">
+          <div class="overlay"><span>Proceso Creativo</span></div>
+        </div>
+        <div class="gallery-item placeholder-3">
+          <div class="overlay"><span>Entrega Feliz</span></div>
+        </div>
+        <div class="gallery-item placeholder-4">
+          <div class="overlay"><span>Tulipanes</span></div>
+        </div>
+        <div class="gallery-item item-medium placeholder-5">
+          <div class="overlay"><span>Ramo Girasoles</span></div>
+        </div>
+        <div class="gallery-item placeholder-6">
+          <div class="overlay"><span>Detalle Accesorio</span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, var(--c-primary), var(--c-secondary));
+    padding: 6rem 1.5rem 3rem;
+    position: relative;
+    border-bottom-left-radius: 50% 10%;
+    border-bottom-right-radius: 50% 10%;
+  }
+
+  .gallery-filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+  }
+
+  .filter-btn {
+    padding: 0.5rem 1.5rem;
+    border: 2px solid var(--c-primary-light);
+    background: transparent;
+    border-radius: 50px;
+    font-family: var(--font-main);
+    cursor: pointer;
+    transition: var(--transition);
+  }
+
+  .filter-btn:hover, .filter-btn.active {
+    background: var(--c-primary);
+    color: white;
+    border-color: var(--c-primary);
+  }
+
+  /* Masonry CSS implementation */
+  .masonry-grid {
+    column-count: 1;
+    column-gap: 1.5rem;
+  }
+
+  @media (min-width: 600px) {
+    .masonry-grid {
+      column-count: 2;
+    }
+  }
+
+  @media (min-width: 900px) {
+    .masonry-grid {
+      column-count: 3;
+    }
+  }
+
+  .gallery-item {
+    break-inside: avoid;
+    margin-bottom: 1.5rem;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    height: 250px;
+    /* Placeholder default styles */
+    background-size: cover;
+    background-position: center;
+  }
+
+  .item-large {
+    height: 400px;
+  }
+  .item-medium {
+    height: 300px;
+  }
+
+  .placeholder-1 { background: linear-gradient(120deg, #f6d365, #fda085); }
+  .placeholder-2 { background: linear-gradient(120deg, #d4fc79, #96e6a1); }
+  .placeholder-3 { background: linear-gradient(120deg, #a18cd1, #fbc2eb); }
+  .placeholder-4 { background: linear-gradient(120deg, #ffecd2, #fcb69f); }
+  .placeholder-5 { background: linear-gradient(120deg, #cfd9df, #e2ebf0); }
+  .placeholder-6 { background: linear-gradient(120deg, #fad0c4, #ffd1ff); }
+
+  .overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.4);
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+  }
+
+  .gallery-item:hover .overlay {
+    opacity: 1;
+  }
+
+  .overlay span {
+    color: white;
+    font-family: var(--font-accent);
+    font-size: 1.5rem;
+    transform: translateY(20px);
+    transition: var(--transition);
+  }
+
+  .gallery-item:hover .overlay span {
+    transform: translateY(0);
+  }
+</style>

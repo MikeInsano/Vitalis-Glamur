@@ -1,0 +1,215 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Inicio">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="container hero-content animate-fade-in">
+      <div class="glass hero-card">
+        <h1 class="hero-title">Flores que no se marchitan, hechas con <span class="text-accent underline">creatividad</span> y amor</h1>
+        <p class="hero-subtitle">Transformamos limpiapipas en detalles únicos y duraderos.</p>
+        <div class="hero-buttons">
+          <a href="/catalogo" class="btn btn-primary">Ver catálogo</a>
+          <a href="#destacados" class="btn btn-outline">Explorar</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Destacados / Minigalería -->
+  <section id="destacados" class="section bg-secondary-light">
+    <div class="container text-center">
+      <h2 class="title">Nuestros Favoritos</h2>
+      <p class="subtitle" style="margin-bottom: 3rem;">Un vistazo a las creaciones que más enamoran</p>
+      
+      <div class="grid-features">
+        <div class="card glass">
+          <div class="card-img placeholder-rosa"></div>
+          <h3>Ramos Eternos</h3>
+          <p>Perfectos para cualquier ocasión especial</p>
+        </div>
+        <div class="card glass">
+          <div class="card-img placeholder-tulipan"></div>
+          <h3>Tulipanes</h3>
+          <p>Colores vibrantes y detalles adorables</p>
+        </div>
+        <div class="card glass">
+          <div class="card-img placeholder-girasol"></div>
+          <h3>Girasoles</h3>
+          <p>Ideal para iluminar el día de alguien</p>
+        </div>
+      </div>
+      <div style="margin-top: 3rem;">
+        <a href="/galeria" class="btn btn-outline">Ver galería completa</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Breve Testimonio -->
+  <section class="section testimonial-section">
+    <div class="container">
+      <div class="testimonial-box glass animate-fade-in">
+        <p class="quote">"Hermosas flores, duran muchísimo y están muy bien hechas."</p>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p class="author">- Cliente Feliz</p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-top: 80px; /* offset header */
+  }
+
+  .hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top right, var(--c-primary-light) 0%, transparent 60%),
+                radial-gradient(circle at bottom left, var(--c-secondary) 0%, transparent 50%),
+                var(--c-bg);
+    z-index: -1;
+  }
+
+  .hero-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-card {
+    max-width: 800px;
+    padding: 3rem;
+    border-radius: var(--radius-lg);
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--c-text-main);
+  }
+
+  .underline {
+    position: relative;
+    display: inline-block;
+  }
+  .underline::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background-color: var(--c-primary);
+    opacity: 0.5;
+    border-radius: 4px;
+    z-index: -1;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--c-text-muted);
+    margin-bottom: 2rem;
+  }
+
+  .hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .bg-secondary-light {
+    background-color: rgba(226, 240, 203, 0.2); /* c-secondary with opacity */
+  }
+
+  .grid-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  .card {
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .card-img {
+    height: 200px;
+    border-radius: var(--radius-sm);
+    margin-bottom: 1rem;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .placeholder-rosa {
+    background: linear-gradient(135deg, #ffd1dc, #ff9e99);
+  }
+  .placeholder-tulipan {
+    background: linear-gradient(135deg, #ffc8a2, #ffd1dc);
+  }
+  .placeholder-girasol {
+    background: linear-gradient(135deg, #fdfd96, #ffb7b2);
+  }
+
+  .card h3 {
+    margin-bottom: 0.5rem;
+  }
+
+  .testimonial-section {
+    padding: 6rem 1.5rem;
+  }
+
+  .testimonial-box {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 3rem;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    position: relative;
+    background: linear-gradient(135deg, var(--c-primary-light), white);
+  }
+
+  .quote {
+    font-size: 1.5rem;
+    font-style: italic;
+    font-family: var(--font-accent);
+    color: var(--c-text-main);
+    margin-bottom: 1rem;
+  }
+
+  .stars {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+  }
+
+  .author {
+    font-weight: bold;
+    color: var(--c-text-muted);
+  }
+
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2.2rem;
+    }
+    .hero-card {
+      padding: 2rem 1.5rem;
+    }
+  }
+</style>

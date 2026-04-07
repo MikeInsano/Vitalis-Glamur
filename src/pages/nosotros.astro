@@ -1,0 +1,150 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Sobre Nosotros">
+  <div class="page-header">
+    <div class="container text-center">
+      <h1 class="title" style="color: white; margin-bottom: 0;">Sobre Nosotros</h1>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text animate-fade-in">
+          <h2 class="title" style="font-size: 2rem;">Nuestra Historia</h2>
+          <p>Somos una empresa creada en Cancún, nacida como un emprendimiento en pareja con el objetivo de transformar ideas en detalles únicos y duraderos.</p>
+          <p>Nos especializamos en la creación de flores de limpiapipas, hechas completamente a mano, cuidando cada detalle para ofrecer productos originales que transmiten emociones y creatividad. Cada pieza que elaboramos refleja dedicación, amor y el deseo de crear algo especial para cada cliente.</p>
+        </div>
+        <div class="about-img placeholder-history glass animate-fade-in" style="animation-delay: 0.2s;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-secondary-light">
+    <div class="container">
+      <div class="mision-vision">
+        <div class="card glass animate-fade-in">
+          <div class="icon">🌷</div>
+          <h3>Nuestra Misión</h3>
+          <p>Crear flores artesanales únicas que permitan a las personas expresar sentimientos de una manera creativa, duradera y significativa.</p>
+        </div>
+        
+        <div class="card glass animate-fade-in" style="animation-delay: 0.2s;">
+          <div class="icon">🌼</div>
+          <h3>Nuestra Visión</h3>
+          <p>Convertirnos en una marca reconocida en Quintana Roo por la calidad, innovación y originalidad de nuestros productos artesanales.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container text-center">
+      <h2 class="title" style="font-size: 2rem;">Nuestros Valores 💖</h2>
+      <div class="valores-list animate-fade-in">
+        <span class="bubble">Creatividad</span>
+        <span class="bubble">Compromiso</span>
+        <span class="bubble">Calidad</span>
+        <span class="bubble">Atención personalizada</span>
+        <span class="bubble">Amor por lo artesanal</span>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, var(--c-primary-dark), var(--c-primary));
+    padding: 6rem 1.5rem 3rem;
+    position: relative;
+    border-bottom-left-radius: 50% 10%;
+    border-bottom-right-radius: 50% 10%;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+    margin-top: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .about-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .about-text p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    color: var(--c-text-muted);
+  }
+
+  .placeholder-history {
+    background: linear-gradient(135deg, var(--c-secondary), var(--c-primary-light));
+    height: 400px;
+    border-radius: var(--radius-lg);
+  }
+
+  .bg-secondary-light {
+    background-color: rgba(226, 240, 203, 0.3);
+  }
+
+  .mision-vision {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .mision-vision {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .card {
+    padding: 3rem 2rem;
+    text-align: center;
+    border-radius: var(--radius-md);
+  }
+
+  .card .icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .card h3 {
+    margin-bottom: 1rem;
+    color: var(--c-primary-dark);
+  }
+
+  .valores-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .bubble {
+    background-color: var(--c-white);
+    color: var(--c-primary-dark);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 500;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    border: 2px solid var(--c-primary-light);
+  }
+
+  .bubble:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: var(--shadow-md);
+    background-color: var(--c-primary);
+    color: var(--c-white);
+  }
+</style>

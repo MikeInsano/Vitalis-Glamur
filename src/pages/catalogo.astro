@@ -1,0 +1,218 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const productos = [
+  { nombre: "Tulipán", precio: 60, isAccesorio: false },
+  { nombre: "Lirio", precio: 70, isAccesorio: false },
+  { nombre: "Rosa", precio: 50, isAccesorio: false },
+  { nombre: "Gerbera", precio: 55, isAccesorio: false },
+  { nombre: "Jacinto", precio: 40, isAccesorio: false },
+  { nombre: "Nubecitas", precio: 40, isAccesorio: true },
+  { nombre: "Corazón", precio: 20, isAccesorio: true },
+  { nombre: "Eucalipto", precio: 35, isAccesorio: true },
+];
+
+const flores = productos.filter(p => !p.isAccesorio);
+const accesorios = productos.filter(p => p.isAccesorio);
+---
+
+<Layout title="Catálogo de Productos">
+  <div class="page-header">
+    <div class="container text-center">
+      <h1 class="title" style="color: white; margin-bottom: 0;">Catálogo De Flores Eternas</h1>
+      <p class="subtitle" style="color: rgba(255,255,255,0.9); margin-top: 1rem;">Personaliza a tu gusto por colores</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container text-center mb-section">
+      <span class="badge text-accent">Tamaños Disponibles</span>
+      <h2 class="title" style="font-size: 2rem; margin-top: 0.5rem;">Ramos Eternos</h2>
+      <p style="color: var(--c-text-muted); margin-bottom: 2rem;">Regálalo en tamaño: Grande, Mediano, Pequeño, o Individual <br/> Ideal para: Cumpleaños, Regalos, Días especiales y Aniversarios.</p>
+    </div>
+
+    <!-- Sección Flores -->
+    <div class="container mb-section">
+      <h3 class="section-title">Escoge Tu Flor Eterna</h3>
+      <div class="product-grid">
+        {flores.map((flor) => (
+          <div class="product-card glass animate-fade-in">
+            <!-- Simulación de imagen -->
+            <div class="product-img placeholder-flor"></div>
+            <div class="product-info">
+              <h4>{flor.nombre}</h4>
+              <p class="colors">Varios Colores</p>
+              <div class="product-bottom">
+                <span class="price">${flor.precio} MXN</span>
+                <button class="btn btn-primary add-to-cart btn-sm" data-name={flor.nombre} data-price={flor.precio}>
+                  Agregar
+                </button>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Sección Accesorios -->
+    <div class="container mb-section">
+      <h3 class="section-title">Escoge Tu Accesorio Eterno</h3>
+      <div class="product-grid">
+        {accesorios.map((acc) => (
+          <div class="product-card glass animate-fade-in">
+            <div class="product-img placeholder-acc"></div>
+            <div class="product-info">
+              <h4>{acc.nombre}</h4>
+              <p class="colors">Varios Colores</p>
+              <div class="product-bottom">
+                <span class="price">${acc.precio} MXN</span>
+                <button class="btn btn-outline add-to-cart btn-sm" data-name={acc.nombre} data-price={acc.precio}>
+                  Agregar
+                </button>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+  </section>
+</Layout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, var(--c-primary-dark), var(--c-accent));
+    padding: 6rem 1.5rem 3rem;
+    position: relative;
+    border-bottom-left-radius: 50% 10%;
+    border-bottom-right-radius: 50% 10%;
+  }
+
+  .mb-section {
+    margin-bottom: 4rem;
+  }
+
+  .badge {
+    background-color: var(--c-white);
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-weight: bold;
+    display: inline-block;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+    color: var(--c-primary-dark);
+    margin-bottom: 2rem;
+    border-bottom: 2px dashed var(--c-primary-light);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+  }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+
+  .product-card {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .product-img {
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .placeholder-flor {
+    background: linear-gradient(135deg, #ffd1dc, #ff8fab);
+  }
+
+  .placeholder-acc {
+    background: linear-gradient(135deg, var(--c-secondary), var(--c-primary-light));
+  }
+
+  .product-info {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .product-info h4 {
+    font-size: 1.3rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .colors {
+    color: var(--c-text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+  }
+
+  .product-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+  }
+
+  .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--c-primary-dark);
+  }
+
+  .btn-sm {
+    padding: 0.4rem 1rem;
+    font-size: 0.9rem;
+  }
+</style>
+
+<script>
+  // Script rápido para interactividad básica carrito
+  document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.add-to-cart');
+    let cartCount = 0;
+    const cartCountEl = document.querySelector('.cart-count');
+    
+    buttons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        cartCount++;
+        if(cartCountEl) {
+          cartCountEl.textContent = cartCount;
+          
+          // Animación visual al agregar
+          cartCountEl.parentElement.style.transform = 'scale(1.3)';
+          setTimeout(() => {
+            cartCountEl.parentElement.style.transform = 'scale(1)';
+          }, 200);
+        }
+        
+        // Efecto del botón
+        const originalText = e.target.textContent;
+        e.target.textContent = '¡Añadido!';
+        e.target.style.backgroundColor = 'var(--c-secondary-dark)';
+        e.target.style.color = 'var(--c-text-main)';
+        e.target.style.borderColor = 'var(--c-secondary-dark)';
+        
+        setTimeout(() => {
+          e.target.textContent = originalText;
+          e.target.style = ''; // Reset estilar inline
+        }, 1500);
+      });
+    });
+  });
+</script>
