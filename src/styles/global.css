@@ -53,3 +53,13 @@
     @apply bg-white/70 backdrop-blur-[10px] border border-white/50 shadow-md;
   }
 }
+
+@layer utilities {
+  #mobile-sidebar {
+    z-index: 100 !important; 
+  }
+  
+  #sidebar-overlay {
+    z-index: 90 !important;
+  }
+}
