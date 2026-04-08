@@ -3,19 +3,17 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Personalización">
-  <div class="linear-to-br from-primary-dark to-[#FFC0CB] pt-24 pb-12 px-6 relative rounded-b-[20%] text-center">
-    <div class="container max-w-300 mx-auto">
+  <div class="bg-linear-to-br from-primary-dark to-primary pt-24 pb-12 px-6 relative rounded-b-[50%_10%]">
+    <div class="container max-w-300 mx-auto text-center">
       <h1 class="text-[2.5rem] md:text-[3.5rem] text-white font-main font-semibold leading-tight m-0">Hazlo Tuyo</h1>
       <p class="text-xl text-white/90 mt-4">Creamos arreglos personalizados según tu idea</p>
     </div>
   </div>
-
   <section class="py-16 px-6">
     <div class="container max-w-300 mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center mt-8">
       <div class="animate-fade-in">
         <h2 class="text-[2.2rem] text-text-main font-main font-semibold mb-4">Opciones Ilimitadas</h2>
         <p class="mb-8 text-text-muted">Cuéntanos qué tienes en mente y nosotros lo transformamos en una realidad eterna con limpiapipas. ¡Cualquier diseño es posible!</p>
-        
         <ul class="list-none p-0">
           <li class="flex gap-4 mb-6">
             <span class="text-[2rem] bg-primary-light w-15 h-15 flex items-center justify-center rounded-full shrink-0">🎨</span>
@@ -40,7 +38,6 @@ import Layout from '../layouts/Layout.astro';
           </li>
         </ul>
       </div>
-
       <div class="p-10 rounded-3xl glass animate-fade-in" style="animation-delay: 0.2s;">
         <h3 class="mb-6 text-primary-dark text-2xl font-main font-semibold">Solicitar cotización</h3>
         <form>
@@ -48,17 +45,14 @@ import Layout from '../layouts/Layout.astro';
             <label for="nombre" class="block mb-2 font-medium text-text-main">Nombre Completo</label>
             <input type="text" id="nombre" placeholder="Ej. Ana Pérez" class="w-full py-3 px-4 border border-black/10 rounded-lg font-inherit text-base transition-all duration-300 bg-white/80 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/30" required />
           </div>
-          
           <div class="mb-6">
             <label for="pedido" class="block mb-2 font-medium text-text-main">Idea de Pedido</label>
             <input type="text" id="pedido" placeholder="Ej. Ramo de 5 tulipanes con corona" class="w-full py-3 px-4 border border-black/10 rounded-lg font-inherit text-base transition-all duration-300 bg-white/80 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/30" required />
           </div>
-          
           <div class="mb-6">
             <label for="detalles" class="block mb-2 font-medium text-text-main">Detalles de Personalización</label>
             <textarea id="detalles" rows="4" placeholder="Especifica colores, tamaño o si quieres agregar algún accesorio extra..." class="w-full py-3 px-4 border border-black/10 rounded-lg font-inherit text-base transition-all duration-300 bg-white/80 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/30" required></textarea>
           </div>
-          
           <button type="submit" class="btn btn-primary w-full">Solicitar cotización</button>
         </form>
       </div>

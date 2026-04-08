@@ -3,7 +3,6 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Inicio">
-  <!-- Hero Section -->
   <section class="min-h-screen flex items-center relative pt-20">
     <div class="absolute inset-0 -z-10 bg-bg" style="background: radial-gradient(circle at top right, #FFDADE 0%, transparent 60%), radial-gradient(circle at bottom left, #E2F0CB 0%, transparent 50%), #FAFAFA;"></div>
     <div class="container max-w-300 mx-auto px-6 flex justify-center items-center animate-fade-in">
@@ -17,13 +16,10 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </div>
   </section>
-
-  <!-- Destacados / Minigalería -->
   <section id="destacados" class="py-16 px-6 bg-secondary/20">
     <div class="container max-w-300 mx-auto text-center">
       <h2 class="text-[2.5rem] md:text-[3.5rem] mb-4 text-text-main font-main font-semibold leading-tight">Nuestros Favoritos</h2>
       <p class="text-xl text-text-muted font-normal mb-12">Un vistazo a las creaciones que más enamoran</p>
-      
       <div class="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-8">
         <div class="p-6 rounded-2xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg glass">
           <div class="h-50 rounded-lg mb-4 bg-cover bg-center bg-linear-to-br from-[#ffd1dc] to-[#ff9e99]"></div>
@@ -43,17 +39,6 @@ import Layout from '../layouts/Layout.astro';
       </div>
       <div class="mt-12">
         <a href="/galeria" class="btn btn-outline">Ver galería completa</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Breve Testimonio -->
-  <section class="py-24 px-6">
-    <div class="container max-w-300 mx-auto px-6">
-      <div class="max-w-175 mx-auto p-12 rounded-3xl text-center relative bg-linear-to-br from-primary-light to-white glass animate-fade-in">
-        <p class="text-2xl italic font-accent text-text-main mb-4">"Hermosas flores, duran muchísimo y están muy bien hechas."</p>
-        <div class="mb-2 text-xl">⭐⭐⭐⭐⭐</div>
-        <p class="font-bold text-text-muted">- Cliente Feliz</p>
       </div>
     </div>
   </section>

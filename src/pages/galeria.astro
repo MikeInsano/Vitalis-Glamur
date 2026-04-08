@@ -3,23 +3,20 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Galería">
-  <div class="bg-linear-to-br from-primary to-secondary pt-24 pb-12 px-6 relative rounded-b-[50%_10%] text-center">
-    <div class="container max-w-300 mx-auto">
+  <div class="bg-linear-to-br from-primary-dark to-accent pt-24 pb-12 px-6 relative rounded-b-[50%_10%]">
+    <div class="container max-w-300 mx-auto text-center">
       <h1 class="text-[2.5rem] md:text-[3.5rem] text-white font-main font-semibold leading-tight m-0">Nuestra Galería</h1>
       <p class="text-xl text-white/90 mt-4">Un vistazo al amor en cada detalle</p>
     </div>
   </div>
-
   <section class="py-16 px-6">
     <div class="container max-w-300 mx-auto">
-      
       <div class="flex justify-center gap-4 flex-wrap mb-12 animate-fade-in">
         <button class="filter-btn py-2 px-6 border-2 border-primary-light bg-transparent rounded-full font-main cursor-pointer transition-all duration-300 hover:bg-primary hover:text-white hover:border-primary">Todos</button>
         <button class="filter-btn py-2 px-6 border-2 border-primary-light bg-transparent rounded-full font-main cursor-pointer transition-all duration-300 hover:bg-primary hover:text-white hover:border-primary">Productos Terminados</button>
         <button class="filter-btn py-2 px-6 border-2 border-primary-light bg-transparent rounded-full font-main cursor-pointer transition-all duration-300 hover:bg-primary hover:text-white hover:border-primary">En Proceso</button>
         <button class="filter-btn py-2 px-6 border-2 border-primary-light bg-transparent rounded-full font-main cursor-pointer transition-all duration-300 hover:bg-primary hover:text-white hover:border-primary">Entregas</button>
       </div>
-
       <div class="columns-1 sm:columns-2 md:columns-3 gap-6 animate-fade-in" style="animation-delay: 0.2s;">
         <div class="break-inside-avoid mb-6 rounded-2xl overflow-hidden relative cursor-pointer group bg-cover bg-center h-100 bg-linear-to-br from-[#f6d365] to-[#fda085]">
           <div class="absolute inset-0 bg-black/40 opacity-0 flex items-center justify-center transition-all duration-300 group-hover:opacity-100">
@@ -52,7 +49,6 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </div>
       </div>
-
     </div>
   </section>
 </Layout>
