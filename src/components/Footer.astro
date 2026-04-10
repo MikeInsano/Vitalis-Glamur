@@ -1,30 +1,40 @@
 ---
+const navLinks = [
+  { href: "/", label: "Inicio" },
+  { href: "/nosotros", label: "Nosotros" },
+  { href: "/catalogo", label: "Catálogo" },
+  { href: "/personalizacion", label: "Personalizar" },
+  { href: "/galeria", label: "Galería" },
+];
 ---
 
 <footer class="bg-primary-dark text-white pt-16">
-  <div class="container max-w-300 mx-auto px-6 grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr] gap-12 mb-12">
+  <div class="container max-w-300 mx-auto px-6 grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr_1fr] gap-12 mb-12">
     <div class="flex flex-col">
       <a href="/" class="flex items-center gap-1">
-        <span class="font-accent text-white text-[2.5rem]">Flores</span>
-        <span class="font-main font-extrabold text-[1.8rem] text-white">Eternas</span>
+        <span class="font-accent text-white text-[2.5rem]">Vitalis</span>
+        <span class="font-main font-extrabold text-[1.8rem] text-white">Glamur</span>
       </a>
       <p class="mt-4 opacity-90 max-w-75">Flores que no se marchitan, hechas con creatividad y amor directamente desde Cancún.</p>
     </div>
     <div>
       <h4 class="font-main font-semibold text-xl text-white mb-6">Enlaces Rápidos</h4>
-      <ul class="list-none p-0 flex flex-col gap-3">
-        <li><a href="/" class="opacity-80 transition-all duration-300 hover:opacity-100 hover:pl-1.25">Inicio</a></li>
-        <li><a href="/nosotros" class="opacity-80 transition-all duration-300 hover:opacity-100 hover:pl-1.25">Sobre Nosotros</a></li>
-        <li><a href="/catalogo" class="opacity-80 transition-all duration-300 hover:opacity-100 hover:pl-1.25">Catálogo</a></li>
-        <li><a href="/personalizacion" class="opacity-80 transition-all duration-300 hover:opacity-100 hover:pl-1.25">Personalización</a></li>
+      <ul class="list-none p-0 flex flex-col gap-3 font-text">
+        {navLinks.map((link) => (
+          <li>
+            <a href={link.href} class="opacity-80 transition-all duration-300 hover:opacity-100 hover:pl-2">
+              {link.label}
+            </a>
+          </li>
+        ))}
       </ul>
     </div>
     <div>
       <h4 class="font-main font-semibold text-xl text-white mb-6">Síguenos</h4>
       <div class="flex gap-4">
-        <a href="#" aria-label="Facebook" class="flex items-center justify-center w-10 h-10 bg-white/10 rounded-full transition-all duration-300 hover:bg-white hover:text-primary-dark hover:-translate-y-0.75">
+        <!-- <a href="#" aria-label="Facebook" class="flex items-center justify-center w-10 h-10 bg-white/10 rounded-full transition-all duration-300 hover:bg-white hover:text-primary-dark hover:-translate-y-0.75">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-        </a>
+        </a> -->
         <a href="#" aria-label="Instagram" class="flex items-center justify-center w-10 h-10 bg-white/10 rounded-full transition-all duration-300 hover:bg-white hover:text-primary-dark hover:-translate-y-0.75">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
         </a>

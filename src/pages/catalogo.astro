@@ -1,17 +1,31 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import tulipan from '../assets/productos/tulipan.webp';
+import lirio from '../assets/productos/lirio.webp';
+import rosa from '../assets/productos/rosa.webp';
+// import dalia from '../assets/productos/';
+import gerbera from '../assets/productos/gerbera.webp';
+// import spider from '../assets/productos/';
+import jacinto from '../assets/productos/jacinto.webp';
+import eucalipto from '../assets/productos/eucalipto.webp';
+import nube from '../assets/productos/nubecita.webp';
+import corazon from '../assets/productos/corazon.webp';
+// import lavanda from '../assets/productos/';
 
 const productos = [
-  { nombre: "Tulipán", precio: 60, isAccesorio: false },
-  { nombre: "Lirio", precio: 70, isAccesorio: false },
-  { nombre: "Rosa", precio: 50, isAccesorio: false },
-  { nombre: "Gerbera", precio: 55, isAccesorio: false },
-  { nombre: "Jacinto", precio: 40, isAccesorio: false },
-  { nombre: "Nubecitas", precio: 40, isAccesorio: true },
-  { nombre: "Corazón", precio: 20, isAccesorio: true },
-  { nombre: "Eucalipto", precio: 35, isAccesorio: true },
+  { nombre: "Tulipán", precio: 60, isAccesorio: false, imagen: tulipan },
+  { nombre: "Lirio", precio: 70, isAccesorio: false, imagen: lirio },
+  { nombre: "Rosa", precio: 50, isAccesorio: false, imagen: rosa },
+  { nombre: "Dalia", precio: 50, isAccesorio: false },
+  { nombre: "Gerbera", precio: 55, isAccesorio: false, imagen: gerbera },
+  { nombre: "Spider Lily", precio: 70, isAccesorio: false },
+  { nombre: "Jacinto", precio: 40, isAccesorio: true, imagen: jacinto },
+  { nombre: "Eucalipto", precio: 35, isAccesorio: true, imagen: eucalipto },
+  { nombre: "Nubecitas", precio: 40, isAccesorio: true, imagen: nube },
+  { nombre: "Corazón", precio: 20, isAccesorio: true, imagen: corazon },
+  { nombre: "Lavanda", precio: 35, isAccesorio: true },
 ];
-
 const flores = productos.filter(p => !p.isAccesorio);
 const accesorios = productos.filter(p => p.isAccesorio);
 ---
@@ -23,97 +37,110 @@ const accesorios = productos.filter(p => p.isAccesorio);
       <p class="text-xl text-white/90 mt-4">Personaliza a tu gusto por colores</p>
     </div>
   </div>
-
   <section class="py-16 px-6">
     <div class="container max-w-300 mx-auto text-center mb-16">
       <span class="bg-white py-1.5 px-4 rounded-full font-bold inline-block shadow-sm text-accent">Tamaños Disponibles</span>
       <h2 class="text-3xl md:text-4xl text-text-main font-main font-semibold mt-4 mb-4">Ramos Eternos</h2>
       <p class="text-text-muted mb-8 text-lg">Regálalo en tamaño: Grande, Mediano, Pequeño, o Individual <br/> Ideal para: Cumpleaños, Regalos, Días especiales y Aniversarios.</p>
     </div>
-
-    <!-- Sección Flores -->
     <div class="container max-w-300 mx-auto mb-16">
       <h3 class="text-[1.8rem] text-primary-dark mb-8 border-b-2 border-dashed border-primary-light pb-2 inline-block font-main font-semibold">Escoge Tu Flor Eterna</h3>
-      <div class="grid grid-cols-[repeat(auto-fill,minmax(250px,1fr))] gap-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {flores.map((flor) => (
-          <div class="rounded-2xl overflow-hidden transition-all duration-300 flex flex-col hover:-translate-y-2 hover:shadow-lg glass animate-fade-in">
-            <!-- Simulación de imagen -->
-            <div class="h-55 bg-cover bg-center bg-linear-to-br from-[#ffd1dc] to-[#ff8fab]"></div>
-            <div class="p-6 grow flex col">
-              <h4 class="text-xl font-main font-semibold mb-1">{flor.nombre}</h4>
-              <p class="text-text-muted text-sm mb-6 grow">Varios Colores</p>
-              <div class="flex justify-between items-center mt-auto">
-                <span class="text-xl font-bold text-primary-dark">${flor.precio} MXN</span>
-                <button class="btn btn-primary add-to-cart py-1.5! px-4! text-sm!" data-name={flor.nombre} data-price={flor.precio}>
-                  Agregar
-                </button>
+          <div class="group rounded-3xl overflow-hidden transition-all duration-500 flex flex-col hover:shadow-2xl hover:shadow-primary/20 glass animate-fade-in border border-white/40">
+            <div class="relative h-56 overflow-hidden">
+              {flor.imagen ? (
+                <Image src={flor.imagen} alt={flor.nombre}width={400} height={300} class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"/>
+              ) : (
+                <div class="absolute inset-0 bg-linear-to-br from-[#ffd1dc] to-[#ff8fab] transition-transform duration-700 group-hover:scale-110"></div>
+              )}
+              <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-md text-primary-dark text-[9px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm">
+                Eterna
+              </span>
+            </div>
+            <div class="p-5 flex flex-col flex-1">
+              <div class="mb-3">
+                <h4 class="text-xl font-main font-bold text-text-main leading-tight group-hover:text-primary transition-colors">
+                  {flor.nombre}
+                </h4>
+                <p class="text-[10px] text-text-muted font-bold uppercase tracking-widest opacity-60 mt-1">
+                  Personalizable
+                </p>
+              </div>
+              <div class="flex flex-col gap-4 mt-auto pt-4 border-t border-primary/10">
+                <div class="flex justify-between items-end">
+                  <div class="flex flex-col">
+                    <span class="text-[10px] text-text-muted font-bold uppercase -mb-1">Precio</span>
+                    <span class="text-xl font-black text-primary-dark">
+                      ${flor.precio} <span class="text-[10px] font-medium text-text-muted">MXN</span>
+                    </span>
+                  </div>
+                  <button class="btn btn-primary add-to-cart py-2! px-4! rounded-xl! text-[10px]! font-bold! shadow-md active:scale-95 transition-all" data-name={flor.nombre} data-price={flor.precio}>
+                    Agregar
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         ))}
       </div>
     </div>
-
-    <!-- Sección Accesorios -->
     <div class="container max-w-300 mx-auto mb-16">
       <h3 class="text-[1.8rem] text-primary-dark mb-8 border-b-2 border-dashed border-primary-light pb-2 inline-block font-main font-semibold">Escoge Tu Accesorio Eterno</h3>
-      <div class="grid grid-cols-[repeat(auto-fill,minmax(250px,1fr))] gap-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {accesorios.map((acc) => (
-          <div class="rounded-2xl overflow-hidden transition-all duration-300 flex flex-col hover:-translate-y-2 hover:shadow-lg glass animate-fade-in">
-            <div class="h-55 bg-cover bg-center bg-linear-to-br from-secondary to-primary-light"></div>
-            <div class="p-6 grow flex col">
-              <h4 class="text-xl font-main font-semibold mb-1">{acc.nombre}</h4>
-              <p class="text-text-muted text-sm mb-6 grow">Varios Colores</p>
-              <div class="flex justify-between items-center mt-auto">
-                <span class="text-xl font-bold text-primary-dark">${acc.precio} MXN</span>
-                <button class="btn btn-outline add-to-cart py-1.5! px-4! text-sm!" data-name={acc.nombre} data-price={acc.precio}>
-                  Agregar
-                </button>
+          <div class="group rounded-3xl overflow-hidden transition-all duration-500 flex flex-col hover:shadow-2xl hover:shadow-secondary/30 glass animate-fade-in border border-white/40">
+            <div class="relative h-52 overflow-hidden">
+              {acc.imagen ? (
+                <Image src={acc.imagen} alt={acc.nombre}width={400} height={300} class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"/>
+              ) : (
+                <div class="absolute inset-0 bg-linear-to-br from-secondary/40 to-primary-light transition-transform duration-700 group-hover:scale-110"></div>
+              )}
+              <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-md text-primary-dark text-[9px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm">
+                Complemento
+              </span>
+            </div>
+            <div class="p-5 flex flex-col flex-1">
+              <div class="mb-3">
+                <h4 class="text-lg font-main font-bold text-text-main leading-tight group-hover:text-primary-dark transition-colors">
+                  {acc.nombre}
+                </h4>
+                <p class="text-[10px] text-text-muted font-bold uppercase tracking-widest opacity-60 mt-1">
+                  Detalles Extras
+                </p>
+              </div>
+              <div class="flex flex-col gap-4 mt-auto pt-4 border-t border-secondary/20">
+                <div class="flex justify-between items-end">
+                  <div class="flex flex-col">
+                    <span class="text-[10px] text-text-muted font-bold uppercase -mb-1">Extra</span>
+                    <span class="text-xl font-black text-text-main">
+                      ${acc.precio} <span class="text-[10px] font-medium text-text-muted">MXN</span>
+                    </span>
+                  </div>
+                  <button class="btn btn-outline add-to-cart py-2! px-4! rounded-xl! text-[10px]! font-bold! active:scale-95 transition-all border-secondary/50 hover:bg-secondary hover:text-text-main" data-name={acc.nombre} data-price={acc.precio}>
+                    Agregar
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         ))}
       </div>
     </div>
-
   </section>
 </Layout>
 
 <script>
-  // Script rápido para interactividad básica carrito
   document.addEventListener('DOMContentLoaded', () => {
-    const buttons = document.querySelectorAll('.add-to-cart');
-    let cartCount = 0;
-    const cartCountEl = document.querySelector('.cart-count');
-    
-    buttons.forEach(btn => {
+    const addButtons = document.querySelectorAll('.add-to-cart');
+    addButtons.forEach(btn => {
       btn.addEventListener('click', (e) => {
-        cartCount++;
-        if(cartCountEl) {
-          cartCountEl.textContent = cartCount.toString();
-          
-          // Animación visual al agregar
-          const parent = cartCountEl.parentElement;
-          if(parent) {
-            parent.style.transform = 'scale(1.3)';
-            setTimeout(() => {
-              parent.style.transform = 'scale(1)';
-            }, 200);
-          }
-        }
-        
-        // Efecto del botón
-        const target = e.target as HTMLElement;
-        const originalText = target.textContent || 'Agregar';
-        target.textContent = '¡Añadido!';
-        target.style.backgroundColor = 'var(--c-secondary-dark)';
-        target.style.color = 'var(--c-text-main)';
-        target.style.borderColor = 'var(--c-secondary-dark)';
-        
-        setTimeout(() => {
-          target.textContent = originalText;
-          target.style.cssText = ''; // Reset estilar inline
-        }, 1500);
+        const target = e.currentTarget as HTMLButtonElement;
+        const nombre = target.getAttribute('data-name');
+        const precio = parseFloat(target.getAttribute('data-price') || '0');
+        window.dispatchEvent(new CustomEvent('add-to-cart', { 
+          detail: { nombre, precio } 
+        }));
       });
     });
   });

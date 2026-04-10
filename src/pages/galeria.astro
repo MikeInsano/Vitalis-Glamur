@@ -1,5 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import mama from '../assets/galeria/mama.webp';
+import diego from '../assets/galeria/diego.webp';
+import ramo1 from '../assets/galeria/ramo1.webp';
+import ramo2 from '../assets/galeria/ramo2.webp';
+const fotosRamos = [
+  { img: mama, alt: "Cumpleaños" },
+  { img: diego, alt: "Detalle de tulipan eterno" },
+  { img: ramo1, alt: "Tulipan y Dalia eternos" },
+  { img: ramo2, alt: "Arreglo personalizado" },
+];
 ---
 
 <Layout title="Galería">
@@ -10,44 +21,25 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </div>
   <section class="py-16 px-6">
-    <div class="container max-w-300 mx-auto">
-      <div class="flex justify-center gap-4 flex-wrap mb-12 animate-fade-in">
-        <button class="filter-btn py-2 px-6 border-2 border-primary-light bg-transparent rounded-full font-main cursor-pointer transition-all duration-300 hover:bg-primary hover:text-white hover:border-primary">Todos</button>
-        <button class="filter-btn py-2 px-6 border-2 border-primary-light bg-transparent rounded-full font-main cursor-pointer transition-all duration-300 hover:bg-primary hover:text-white hover:border-primary">Productos Terminados</button>
-        <button class="filter-btn py-2 px-6 border-2 border-primary-light bg-transparent rounded-full font-main cursor-pointer transition-all duration-300 hover:bg-primary hover:text-white hover:border-primary">En Proceso</button>
-        <button class="filter-btn py-2 px-6 border-2 border-primary-light bg-transparent rounded-full font-main cursor-pointer transition-all duration-300 hover:bg-primary hover:text-white hover:border-primary">Entregas</button>
+    <div class="container max-w-6xl mx-auto">
+      <div class="columns-1 sm:columns-2 lg:columns-5 gap-4 space-y-4 animate-fade-in">
+        {fotosRamos.map((foto) => (
+          <div class="break-inside-avoid group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-black/5 cursor-zoom-in">
+            <Image src={foto.img} alt={foto.alt} width={400} class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"/>
+            <div class="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-4">
+              <span class="text-white font-accent text-lg translate-y-2 group-hover:translate-y-0 transition-all duration-500">
+                {foto.alt}
+              </span>
+            </div>
+          </div>
+        ))}
       </div>
-      <div class="columns-1 sm:columns-2 md:columns-3 gap-6 animate-fade-in" style="animation-delay: 0.2s;">
-        <div class="break-inside-avoid mb-6 rounded-2xl overflow-hidden relative cursor-pointer group bg-cover bg-center h-100 bg-linear-to-br from-[#f6d365] to-[#fda085]">
-          <div class="absolute inset-0 bg-black/40 opacity-0 flex items-center justify-center transition-all duration-300 group-hover:opacity-100">
-            <span class="text-white font-accent text-2xl translate-y-5 transition-all duration-300 group-hover:translate-y-0">Ramo Terminado</span>
-          </div>
-        </div>
-        <div class="break-inside-avoid mb-6 rounded-2xl overflow-hidden relative cursor-pointer group bg-cover bg-center h-62.5 bg-linear-to-br from-[#d4fc79] to-[#96e6a1]">
-          <div class="absolute inset-0 bg-black/40 opacity-0 flex items-center justify-center transition-all duration-300 group-hover:opacity-100">
-            <span class="text-white font-accent text-2xl translate-y-5 transition-all duration-300 group-hover:translate-y-0">Proceso Creativo</span>
-          </div>
-        </div>
-        <div class="break-inside-avoid mb-6 rounded-2xl overflow-hidden relative cursor-pointer group bg-cover bg-center h-62.5 bg-linear-to-br from-[#a18cd1] to-[#fbc2eb]">
-          <div class="absolute inset-0 bg-black/40 opacity-0 flex items-center justify-center transition-all duration-300 group-hover:opacity-100">
-            <span class="text-white font-accent text-2xl translate-y-5 transition-all duration-300 group-hover:translate-y-0">Entrega Feliz</span>
-          </div>
-        </div>
-        <div class="break-inside-avoid mb-6 rounded-2xl overflow-hidden relative cursor-pointer group bg-cover bg-center h-62.5 bg-linear-to-br from-[#ffecd2] to-[#fcb69f]">
-          <div class="absolute inset-0 bg-black/40 opacity-0 flex items-center justify-center transition-all duration-300 group-hover:opacity-100">
-            <span class="text-white font-accent text-2xl translate-y-5 transition-all duration-300 group-hover:translate-y-0">Tulipanes</span>
-          </div>
-        </div>
-        <div class="break-inside-avoid mb-6 rounded-2xl overflow-hidden relative cursor-pointer group bg-cover bg-center h-75 bg-linear-to-br from-[#cfd9df] to-[#e2ebf0]">
-          <div class="absolute inset-0 bg-black/40 opacity-0 flex items-center justify-center transition-all duration-300 group-hover:opacity-100">
-            <span class="text-white font-accent text-2xl translate-y-5 transition-all duration-300 group-hover:translate-y-0">Ramo Girasoles</span>
-          </div>
-        </div>
-        <div class="break-inside-avoid mb-6 rounded-2xl overflow-hidden relative cursor-pointer group bg-cover bg-center h-62.5 bg-linear-to-br from-[#fad0c4] to-[#ffd1ff]">
-          <div class="absolute inset-0 bg-black/40 opacity-0 flex items-center justify-center transition-all duration-300 group-hover:opacity-100">
-            <span class="text-white font-accent text-2xl translate-y-5 transition-all duration-300 group-hover:translate-y-0">Detalle Accesorio</span>
-          </div>
-        </div>
+      <div class="mt-16 flex flex-col items-center">
+        <div class="w-16 h-0.5 bg-primary/20 rounded-full mb-6"></div>
+        <p class="font-main text-text-muted text-base mb-6 text-center italic">¿Tienes una idea propia? La hacemos realidad.</p>
+        <a href="/personalizacion" class="btn btn-primary py-2.5! px-6! text-sm! shadow-md">
+          Personalizar mi Ramo
+        </a>
       </div>
     </div>
   </section>

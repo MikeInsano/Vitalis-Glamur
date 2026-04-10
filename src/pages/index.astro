@@ -1,5 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import mama from '../assets/galeria/mama.webp';
+import ramo1 from '../assets/galeria/ramo1.webp';
+import ramo2 from '../assets/galeria/ramo2.webp';
 ---
 
 <Layout title="Inicio">
@@ -7,7 +11,10 @@ import Layout from '../layouts/Layout.astro';
     <div class="absolute inset-0 -z-10 bg-bg" style="background: radial-gradient(circle at top right, #FFDADE 0%, transparent 60%), radial-gradient(circle at bottom left, #E2F0CB 0%, transparent 50%), #FAFAFA;"></div>
     <div class="container max-w-300 mx-auto px-6 flex justify-center items-center animate-fade-in">
       <div class="glass max-w-200 p-8 md:p-12 rounded-3xl text-center">
-        <h1 class="text-[2.2rem] md:text-5xl mb-4 text-text-main font-main font-semibold leading-tight">Flores que no se marchitan, hechas con <span class="font-accent relative inline-block text-accent after:content-[''] after:absolute after:bottom-1 md:after:bottom-2 after:left-0 after:w-full after:h-2 after:bg-primary after:opacity-50 after:rounded after:-z-10">creatividad</span> y amor</h1>
+        <h1 class="text-[2.2rem] md:text-5xl mb-4 text-text-main font-main font-semibold leading-tight">Flores que no se marchitan, hechas con 
+          <span class="font-accent relative inline-block text-accent after:content-[''] after:absolute after:bottom-1 md:after:bottom-2 after:left-0 after:w-full after:h-2 after:bg-primary after:opacity-50 after:rounded after:-z-10">creatividad</span> y 
+          <span class="font-accent relative inline-block text-accent after:content-[''] after:absolute after:bottom-1 md:after:bottom-2 after:left-0 after:w-full after:h-2 after:bg-primary after:opacity-50 after:rounded after:-z-10">amor</span>
+        </h1>
         <p class="text-lg text-text-muted mb-8">Transformamos limpiapipas en detalles únicos y duraderos.</p>
         <div class="flex justify-center gap-4 flex-wrap">
           <a href="/catalogo" class="btn btn-primary">Ver catálogo</a>
@@ -20,11 +27,14 @@ import Layout from '../layouts/Layout.astro';
     <div class="container max-w-300 mx-auto text-center">
       <h2 class="text-[2.5rem] md:text-[3.5rem] mb-4 text-text-main font-main font-semibold leading-tight">Nuestros Favoritos</h2>
       <p class="text-xl text-text-muted font-normal mb-12">Un vistazo a las creaciones que más enamoran</p>
-      <div class="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-8">
-        <div class="p-6 rounded-2xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg glass">
-          <div class="h-50 rounded-lg mb-4 bg-cover bg-center bg-linear-to-br from-[#ffd1dc] to-[#ff9e99]"></div>
-          <h3 class="mb-2 font-main font-semibold text-xl">Ramos Eternos</h3>
-          <p>Perfectos para cualquier ocasión especial</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="group p-6 rounded-3xl transition-all duration-500 hover:-translate-y-2 hover:shadow-xl glass animate-fade-in border border-white/50 flex flex-col">
+          <div class="h-60 rounded-xl mb-5 overflow-hidden shadow-inner relative">
+            <Image src={mama} alt="Ramo eterno personalizado para regalo de cumpleaños" width={300} height={300} class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"/>
+            <div class="absolute inset-0 bg-linear-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+          <h3 class="mb-2 font-main font-extrabold text-2xl text-text-main group-hover:text-primary transition-colors">Ramo de Cumpleaños</h3>
+          <p class="text-text-muted text-base font-light">El detalle sorpresa ideal para que su día especial dure para siempre.</p>
         </div>
         <div class="p-6 rounded-2xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg glass">
           <div class="h-50 rounded-lg mb-4 bg-cover bg-center bg-linear-to-br from-[#ffc8a2] to-[#ffd1dc]"></div>
