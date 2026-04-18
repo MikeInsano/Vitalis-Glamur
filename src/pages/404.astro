@@ -1,0 +1,121 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="404 | Vitalis Glamour" hideElements={true}>
+  <main class="relative h-screen flex flex-col md:flex-row items-center justify-center bg-[#FCF8F7] overflow-hidden p-6">
+    <div class="relative w-full md:w-auto flex justify-center md:justify-end items-center z-0">
+      <div class="relative">
+        <h1 class="font-accent text-[18rem] md:text-[35rem] leading-none text-transparent bg-clip-text bg-linear-to-b from-accent/20 to-transparent select-none italic tracking-center drop-shadow-sm">
+          404
+        </h1>
+        <div class="absolute top-1/2 left-0 w-full h-px bg-accent/10 -rotate-12 scale-150"></div>
+      </div>
+    </div>
+    <div class="relative w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left z-10 md:pl-24">
+      <div class="space-y-8 animate-reveal">
+        <header>
+          <h2 class="font-accent text-accent text-4xl md:text-7xl leading-[0.85] tracking-tighter">
+            Jardín <br />
+            <span class="font-accent md:ml-20 inline-block">inconcluso</span>
+          </h2>
+        </header>
+        <p class="text-text-muted text-lg md:text-xl font-accent leading-relaxed max-w-sm border-l border-accent/30 pl-8 mx-auto md:mx-0 md:ml-12">
+          Incluso en la perfección, hay pétalos que eligen su propio camino. Este no es el tuyo.
+        </p>
+        <div class="pt-8 flex justify-center md:justify-start w-full md:ml-12">
+          <a href="/" class="nav-button group">
+            <p data-text="Volver al origen">Volver al origen</p>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </a>
+        </div>
+      </div>
+    </div>
+    <div class="absolute bottom-10 left-10 hidden lg:block">
+      <p class="font-main text-[10px] uppercase tracking-[1em] text-accent/40">
+        404 • Error de navegación • Vitalis Glamour
+      </p>
+    </div>
+    <div class="absolute -bottom-20 -left-20 size-96 bg-accent/5 rounded-full blur-3xl pointer-events-none"></div>
+  </main>
+</Layout>
+
+<style>
+  @keyframes reveal {
+    from { opacity: 0; transform: translateY(30px) skewY(2deg); }
+    to { opacity: 1; transform: translateY(0) skewY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  .animate-reveal {
+    animation: reveal 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 2.5s ease-out forwards;
+  }
+
+  .nav-button {
+    --primary-color: var(--color-accent);
+    --hovered-color: var(--color-primary-dark);
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: var(--font-main);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+  }
+
+  .nav-button p {
+    margin: 0;
+    position: relative;
+    font-size: 16px;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+  }
+
+  .nav-button::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    left: 0;
+    bottom: -4px;
+    background: var(--hovered-color);
+    height: 1px;
+    transition: 0.3s ease-out;
+  }
+
+  .nav-button p::before {
+    position: absolute;
+    content: attr(data-text);
+    width: 0%;
+    inset: 0;
+    color: var(--hovered-color);
+    overflow: hidden;
+    transition: 0.3s ease-out;
+    white-space: nowrap;
+  }
+
+  .nav-button:hover::after { width: 100%; }
+  .nav-button:hover p::before { width: 100%; }
+  .nav-button:hover svg {
+    transform: translateX(8px);
+    color: var(--hovered-color);
+  }
+
+  .nav-button svg {
+    color: var(--primary-color);
+    width: 18px;
+    transition: all 0.3s ease;
+  }
+</style>
