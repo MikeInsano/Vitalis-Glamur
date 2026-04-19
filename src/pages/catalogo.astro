@@ -4,27 +4,26 @@ import { Image } from 'astro:assets';
 import tulipan from '../assets/productos/tulipan.webp';
 import lirio from '../assets/productos/lirio.webp';
 import rosa from '../assets/productos/rosa.webp';
-// import dalia from '../assets/productos/';
+import dalia from '../assets/productos/dalia.webp';
 import gerbera from '../assets/productos/gerbera.webp';
-// import spider from '../assets/productos/';
+import spider from '../assets/productos/spider.webp';
 import jacinto from '../assets/productos/jacinto.webp';
-import eucalipto from '../assets/productos/eucalipto.webp';
-import nube from '../assets/productos/nubecita.webp';
+import nube from '../assets/productos/nube.webp';
 import corazon from '../assets/productos/corazon.webp';
-// import lavanda from '../assets/productos/';
+import lavanda from '../assets/productos/lavanda.webp';
 
 const productos = [
   { nombre: "Tulipán", precio: 60, isAccesorio: false, imagen: tulipan },
   { nombre: "Lirio", precio: 70, isAccesorio: false, imagen: lirio },
   { nombre: "Rosa", precio: 50, isAccesorio: false, imagen: rosa },
-  { nombre: "Dalia", precio: 50, isAccesorio: false },
+  { nombre: "Dalia", precio: 50, isAccesorio: false, imagen: dalia },
   { nombre: "Gerbera", precio: 55, isAccesorio: false, imagen: gerbera },
-  { nombre: "Spider Lily", precio: 70, isAccesorio: false },
+  { nombre: "Spider Lily", precio: 70, isAccesorio: false, imagen: spider },
   { nombre: "Jacinto", precio: 40, isAccesorio: true, imagen: jacinto },
-  { nombre: "Eucalipto", precio: 35, isAccesorio: true, imagen: eucalipto },
+  { nombre: "Eucalipto", precio: 35, isAccesorio: true },
   { nombre: "Nubecitas", precio: 40, isAccesorio: true, imagen: nube },
   { nombre: "Corazón", precio: 20, isAccesorio: true, imagen: corazon },
-  { nombre: "Lavanda", precio: 35, isAccesorio: true },
+  { nombre: "Lavanda", precio: 35, isAccesorio: true, imagen: lavanda },
 ];
 const flores = productos.filter(p => !p.isAccesorio);
 const accesorios = productos.filter(p => p.isAccesorio);
@@ -48,9 +47,9 @@ const accesorios = productos.filter(p => p.isAccesorio);
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {flores.map((flor) => (
           <div class="group rounded-3xl overflow-hidden transition-all duration-500 flex flex-col hover:shadow-2xl hover:shadow-primary/20 glass animate-fade-in border border-white/40">
-            <div class="relative h-56 overflow-hidden">
+            <div class="relative h-44 md:h-48 overflow-hidden">
               {flor.imagen ? (
-                <Image src={flor.imagen} alt={flor.nombre}width={400} height={300} class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"/>
+                <Image src={flor.imagen} alt={flor.nombre} width={400} height={300} class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"/>
               ) : (
                 <div class="absolute inset-0 bg-linear-to-br from-[#ffd1dc] to-[#ff8fab] transition-transform duration-700 group-hover:scale-110"></div>
               )}
@@ -71,7 +70,7 @@ const accesorios = productos.filter(p => p.isAccesorio);
                 <div class="flex justify-between items-end">
                   <div class="flex flex-col">
                     <span class="text-[10px] text-text-muted font-bold uppercase -mb-1">Precio</span>
-                    <span class="text-xl font-black text-primary-dark">
+                    <span class="text-xl font-black text-text-main">
                       ${flor.precio} <span class="text-[10px] font-medium text-text-muted">MXN</span>
                     </span>
                   </div>
@@ -117,7 +116,7 @@ const accesorios = productos.filter(p => p.isAccesorio);
                       ${acc.precio} <span class="text-[10px] font-medium text-text-muted">MXN</span>
                     </span>
                   </div>
-                  <button class="btn btn-outline add-to-cart py-2! px-4! rounded-xl! text-[10px]! font-bold! active:scale-95 transition-all border-secondary/50 hover:bg-secondary hover:text-text-main" data-name={acc.nombre} data-price={acc.precio}>
+                  <button class="btn btn-primary add-to-cart py-2! px-4! rounded-xl! text-[10px]! font-bold! shadow-md active:scale-95 transition-all" data-name={acc.nombre} data-price={acc.precio}>
                     Agregar
                   </button>
                 </div>
