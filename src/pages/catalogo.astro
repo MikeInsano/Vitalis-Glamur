@@ -11,22 +11,30 @@ import jacinto from '../assets/productos/jacinto.webp';
 import nube from '../assets/productos/nube.webp';
 import corazon from '../assets/productos/corazon.webp';
 import lavanda from '../assets/productos/lavanda.webp';
+import rapunzel from '../assets/productos/rapunzel.webp';
 
-const productos = [
-  { nombre: "Tulipán", precio: 60, isAccesorio: false, imagen: tulipan },
-  { nombre: "Lirio", precio: 70, isAccesorio: false, imagen: lirio },
-  { nombre: "Rosa", precio: 50, isAccesorio: false, imagen: rosa },
-  { nombre: "Dalia", precio: 50, isAccesorio: false, imagen: dalia },
-  { nombre: "Gerbera", precio: 55, isAccesorio: false, imagen: gerbera },
-  { nombre: "Spider Lily", precio: 70, isAccesorio: false, imagen: spider },
-  { nombre: "Jacinto", precio: 40, isAccesorio: true, imagen: jacinto },
-  { nombre: "Eucalipto", precio: 35, isAccesorio: true },
-  { nombre: "Nubecitas", precio: 40, isAccesorio: true, imagen: nube },
-  { nombre: "Corazón", precio: 20, isAccesorio: true, imagen: corazon },
-  { nombre: "Lavanda", precio: 35, isAccesorio: true, imagen: lavanda },
+const productosRaw = [
+  { nombre: "Tulipán", precio: 60, imagen: tulipan },
+  { nombre: "Lirio", precio: 70, imagen: lirio },
+  { nombre: "Rosa", precio: 50, imagen: rosa },
+  { nombre: "Dalia", precio: 60, imagen: dalia },
+  { nombre: "Gerbera", precio: 55, imagen: gerbera },
+  { nombre: "Spider Lily", precio: 85, imagen: spider, isEspecial: true, },
+  { nombre: "Jacinto", precio: 40, imagen: jacinto, isAccesorio: true },
+  // { nombre: "Eucalipto", precio: 35, isAccesorio: true },
+  { nombre: "Nubecitas", precio: 40, imagen: nube, isAccesorio: true },
+  { nombre: "Corazón", precio: 20, imagen: corazon, isAccesorio: true },
+  { nombre: "Lavanda", precio: 35, imagen: lavanda, isAccesorio: true },
+  { nombre: "Rapunzel", precio: 150, imagen: rapunzel ,isEspecial: true }
 ];
-const flores = productos.filter(p => !p.isAccesorio);
+const productos = productosRaw.map(p => ({
+  isAccesorio: false,
+  isEspecial: false,
+  ...p
+}));
+const flores = productos.filter(p => !p.isAccesorio && !p.isEspecial);
 const accesorios = productos.filter(p => p.isAccesorio);
+const especiales = productos.filter(p => p.isEspecial);
 ---
 
 <Layout title="Catálogo de Productos">
@@ -112,6 +120,48 @@ const accesorios = productos.filter(p => p.isAccesorio);
                 <div class="flex justify-between items-end">
                   <div class="flex flex-col">
                     <span class="text-[10px] text-text-muted font-bold uppercase -mb-1">Extra</span>
+                    <span class="text-xl font-black text-text-main">
+                      ${acc.precio} <span class="text-[10px] font-medium text-text-muted">MXN</span>
+                    </span>
+                  </div>
+                  <button class="btn btn-primary add-to-cart py-2! px-4! rounded-xl! text-[10px]! font-bold! shadow-md active:scale-95 transition-all" data-name={acc.nombre} data-price={acc.precio}>
+                    Agregar
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+    <div class="container max-w-300 mx-auto mb-16">
+      <h3 class="text-[1.8rem] text-primary-dark mb-8 border-b-2 border-dashed border-primary-light pb-2 inline-block font-main font-semibold">Ediciones Especiales</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {especiales.map((acc) => (
+          <div class="group rounded-3xl overflow-hidden transition-all duration-500 flex flex-col hover:shadow-2xl hover:shadow-secondary/30 glass animate-fade-in border border-white/40">
+            <div class="relative h-52 overflow-hidden">
+              {acc.imagen ? (
+                <Image src={acc.imagen} alt={acc.nombre}width={400} height={300} class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"/>
+              ) : (
+                <div class="absolute inset-0 bg-linear-to-br from-secondary/40 to-primary-light transition-transform duration-700 group-hover:scale-110"></div>
+              )}
+              <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-md text-primary-dark text-[9px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm">
+                Premium
+              </span>
+            </div>
+            <div class="p-5 flex flex-col flex-1">
+              <div class="mb-3">
+                <h4 class="text-lg font-main font-bold text-text-main leading-tight group-hover:text-primary-dark transition-colors">
+                  {acc.nombre}
+                </h4>
+                <p class="text-[10px] text-text-muted font-bold uppercase tracking-widest opacity-60 mt-1">
+                  Exclusivo Vitalis
+                </p>
+              </div>
+              <div class="flex flex-col gap-4 mt-auto pt-4 border-t border-secondary/20">
+                <div class="flex justify-between items-end">
+                  <div class="flex flex-col">
+                    <span class="text-[10px] text-text-muted font-bold uppercase -mb-1">Inversión</span>
                     <span class="text-xl font-black text-text-main">
                       ${acc.precio} <span class="text-[10px] font-medium text-text-muted">MXN</span>
                     </span>

@@ -5,11 +5,29 @@ import mama from '../assets/galeria/mama.webp';
 import diego from '../assets/galeria/diego.webp';
 import ramo1 from '../assets/galeria/ramo1.webp';
 import ramo2 from '../assets/galeria/ramo2.webp';
+import bellota from '../assets/galeria/bellota.webp';
+import burbuja from '../assets/galeria/burbuja.webp';
+import bombom from '../assets/galeria/bombom.webp';
+import duo from '../assets/galeria/duo.webp';
+import lirioRojo from '../assets/galeria/lirioRojo.webp';
+import Lirios from '../assets/galeria/Lirios.webp';
+import ramoGerbera from '../assets/galeria/ramoGerbera.webp';
+import ramoJacinto from '../assets/galeria/ramoJacinto.webp';
+import Rapunzel from '../assets/galeria/Rapunzel.webp';
 const fotosRamos = [
-  { img: mama, alt: "Cumpleaños" },
-  { img: diego, alt: "Detalle de tulipan eterno" },
-  { img: ramo1, alt: "Tulipan y Dalia eternos" },
-  { img: ramo2, alt: "Arreglo personalizado" },
+  { img: mama, alt: "Ramo eterno personalizado para regalo de cumpleaños" },
+  { img: diego, alt: "Detalle de tulipán eterno individual" },
+  { img: ramo1, alt: "Arreglo floral de tulipán y dalia eternos" },
+  { img: ramo2, alt: "Ramo de flores eternas personalizado" },
+  { img: bombom, alt: "Flor eterna inspirada en Bombón de las Chicas Superpoderosas" },
+  { img: burbuja, alt: "Flor eterna inspirada en Burbuja de las Chicas Superpoderosas" },
+  { img: bellota, alt: "Flor eterna inspirada en Bellota de las Chicas Superpoderosas" },
+  { img: duo, alt: "Dúo de flores eternas personalizadas para parejas o amigos" },
+  { img: lirioRojo, alt: "Lirio eterno rojo intenso" },
+  { img: Lirios, alt: "Ramo majestuoso de lirios azules y celestes" },
+  { img: ramoGerbera, alt: "Ramo eterno de gerbera en tono cálido" },
+  { img: ramoJacinto, alt: "Diseño floral con jacinto y lirio eternos" },
+  { img: Rapunzel, alt: "Ramo encantado inspirado en Rapunzel" },
 ];
 ---
 
@@ -22,7 +40,7 @@ const fotosRamos = [
   </div>
   <section class="py-16 px-6">
     <div class="container max-w-6xl mx-auto">
-      <div class="columns-1 sm:columns-2 lg:columns-5 gap-4 space-y-4 animate-fade-in">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 animate-fade-in">
         {fotosRamos.map((foto) => (
           <div class="break-inside-avoid group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-black/5 cursor-zoom-in">
             <Image src={foto.img} alt={foto.alt} width={400} class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"/>

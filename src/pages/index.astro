@@ -1,9 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
-import mama from '../assets/galeria/mama.webp';
-import ramo1 from '../assets/galeria/ramo1.webp';
-import ramo2 from '../assets/galeria/ramo2.webp';
+import cumple from '../assets/galeria/mama.webp';
+import Rapunzel from '../assets/galeria/rapunzel.webp';
+import Lirios from '../assets/galeria/lirios.webp';
 ---
 
 <Layout title="Inicio">
@@ -36,23 +36,29 @@ import ramo2 from '../assets/galeria/ramo2.webp';
       <h2 class="text-[2.5rem] md:text-[3.5rem] mb-4 text-text-main font-main font-semibold leading-tight">Nuestros Favoritos</h2>
       <p class="text-xl text-text-muted font-normal mb-12">Un vistazo a las creaciones que más enamoran</p>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="group p-6 rounded-3xl transition-all duration-500 hover:-translate-y-2 hover:shadow-xl glass animate-fade-in border border-white/50 flex flex-col">
+        <div class="p-6 rounded-2xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg glass">
           <div class="h-60 rounded-xl mb-5 overflow-hidden shadow-inner relative">
-            <Image src={mama} alt="Ramo eterno personalizado para regalo de cumpleaños" width={300} height={300} class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"/>
+            <Image src={cumple} alt="Ramo eterno personalizado para regalo de cumpleaños" width={300} height={300} class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"/>
             <div class="absolute inset-0 bg-linear-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </div>
-          <h3 class="mb-2 font-main font-extrabold text-2xl text-text-main group-hover:text-primary transition-colors">Ramo de Cumpleaños</h3>
+          <h3 class="mb-2 font-main font-semibold text-xl">Ramo de Cumpleaños</h3>
           <p class="text-text-muted text-base font-light">El detalle sorpresa ideal para que su día especial dure para siempre.</p>
         </div>
         <div class="p-6 rounded-2xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg glass">
-          <div class="h-50 rounded-lg mb-4 bg-cover bg-center bg-linear-to-br from-[#ffc8a2] to-[#ffd1dc]"></div>
-          <h3 class="mb-2 font-main font-semibold text-xl">Tulipanes</h3>
-          <p>Colores vibrantes y detalles adorables</p>
+          <div class="h-60 rounded-xl mb-5 overflow-hidden shadow-inner relative">
+            <Image src={Rapunzel} alt="Diseño exclusivo que captura la esencia mágica de Rapunzel" width={300} height={300} class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"/>
+            <div class="absolute inset-0 bg-linear-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+          <h3 class="mb-2 font-main font-semibold text-xl">Ramo Encantado</h3>
+          <p class="text-text-muted text-base font-light">Inspiración floral con destellos dorados y violetas para tu propia historia.</p>
         </div>
         <div class="p-6 rounded-2xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg glass">
-          <div class="h-50 rounded-lg mb-4 bg-cover bg-center bg-linear-to-br from-[#fdfd96] to-[#ffb7b2]"></div>
-          <h3 class="mb-2 font-main font-semibold text-xl">Girasoles</h3>
-          <p>Ideal para iluminar el día de alguien</p>
+          <div class="h-60 rounded-xl mb-5 overflow-hidden shadow-inner relative">
+            <Image src={Lirios} alt="Diseño exclusivo que captura la esencia mágica de Rapunzel" width={300} height={300} class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"/>
+            <div class="absolute inset-0 bg-linear-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+          <h3 class="mb-2 font-main font-semibold text-xl">Lirios de Medianoche</h3>
+          <p class="text-text-muted text-base font-light">Elegancia en azul: cuatro lirios majestuosos de presencia única.</p>
         </div>
       </div>
       <div class="mt-12">
