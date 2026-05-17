@@ -149,7 +149,7 @@
         document.getElementById('whatsapp-checkout')?.addEventListener('click', () => {
             if (carrito.length === 0) return;
             let total = 0;
-            let msg = "*NUEVO PEDIDO - VITALIS GLAMUR*\n";
+            let msg = "*NUEVO PEDIDO - VITALIS GLAMOUR*\n";
             msg += "--------------------------------\n\n";
             carrito.forEach(item => {
                 const sub = item.precio * item.cantidad;
@@ -158,7 +158,6 @@
             });
             msg += `\n--------------------------------\n`;
             msg += `*TOTAL: $${total} MXN*\n\n`;
-            msg += `¿Me confirmas disponibilidad para estos ramos?`;
             window.open(`https://wa.me/${telefonoWhatsApp}?text=${encodeURIComponent(msg)}`, '_blank');
         });
     });

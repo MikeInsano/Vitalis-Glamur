@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import equipo from '../assets/pareja.webp'
 ---
 
 <Layout title="Sobre Nosotros">
@@ -16,7 +18,14 @@ import Layout from '../layouts/Layout.astro';
           <p class="mb-6 text-lg text-text-muted">Somos una empresa creada en Cancún, nacida como un emprendimiento en pareja con el objetivo de transformar ideas en detalles únicos y duraderos.</p>
           <p class="mb-6 text-lg text-text-muted">Nos especializamos en la creación de flores de limpiapipas, hechas completamente a mano, cuidando cada detalle para ofrecer productos originales que transmiten emociones y creatividad. Cada pieza que elaboramos refleja dedicación, amor y el deseo de crear algo especial para cada cliente.</p>
         </div>
-        <div class="bg-linear-to-br from-secondary to-primary-light h-100 rounded-3xl glass animate-fade-in" style="animation-delay: 0.2s;">
+        <div class="relative group order-1 md:order-2 animate-fade-in" style="animation-delay: 0.2s;">
+          <div class="absolute -inset-4 bg-primary/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+          <Image src={equipo} alt="Equipo Vitalis Glamour representado en arte de fieltro" class="w-full h-auto rounded-3xl shadow-2xl relative z-10 transition-all duration-700 group-hover:scale-[1.03] group-hover:rotate-1"/>
+          <div class="absolute -bottom-4 -right-4 bg-white py-3 px-6 rounded-2xl shadow-xl z-20 border border-primary/10 hidden md:block">
+            <p class="text-primary-dark font-main font-bold text-sm m-0 leading-tight">
+              Hecho con amor <br/> <span class="text-[10px] text-text-muted uppercase tracking-widest font-bold">En Pareja</span>
+            </p>
+          </div>
         </div>
       </div>
     </div>
